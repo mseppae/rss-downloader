@@ -1,3 +1,10 @@
 Parse a feed, match with reg exp and download the interesting feed entry.
 
-Supports Eztv.
+Needs an config file in config/config.
+
+Example:
+
+defaults:
+  feed_uri: "http://www.ezrss.it/feed/"
+  target_directory: "/target/directory"
+  match_entries: ['unix']
