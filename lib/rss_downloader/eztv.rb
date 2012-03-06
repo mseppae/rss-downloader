@@ -20,7 +20,7 @@ module RSSDownloader
         uri = escape_brackets(feed_entry.url)
         torrent_file = open(uri)
 
-        File.write(feed_entry_path(feed_entry), "w") do |file|
+        File.open(feed_entry_path(feed_entry), "w") do |file|
           file.write torrent_file.read
         end
       end
