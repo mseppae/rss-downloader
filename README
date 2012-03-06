@@ -1,6 +1,6 @@
 Parse a feed, match with reg exp and download the interesting feed entry.
 
-Needs an config file in config/config.
+Needs an config file config/config.yml
 
 Example:
 
