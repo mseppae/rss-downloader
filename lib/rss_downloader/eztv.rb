@@ -19,13 +19,11 @@ module RSSDownloader
     private
 
     def self.download feed_entry
-      unless File.exists? feed_entry_path(feed_entry)
-        uri = escape_brackets(feed_entry.url)
-        torrent_file = open(uri)
+      uri = escape_brackets(feed_entry.url)
+      torrent_file = open(uri)
 
-        File.open(feed_entry_path(feed_entry), "w") do |file|
-          file.write torrent_file.read
-        end
+      File.open(feed_entry_path(feed_entry), "w") do |file|
+        file.write torrent_file.read
       end
     end
 
