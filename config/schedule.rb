@@ -16,5 +16,5 @@
 job_type :run, "source /Users/mseppae/.rvm/environments/ruby-1.9.3-p0 && cd :path && bundle exec :task :output"
 
 every 1.hour do
-  run "ruby ./scripts/aggregate_eztv_feed"
+  run "ruby ./scripts/aggregate_feeds"
 end
