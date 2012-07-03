@@ -3,7 +3,7 @@ require 'feedzirra'
 module RSS
   class Downloader
     def download
-      response = Feedzirra::Feed.fetch_and_parse(feed_uri)
+      response = feed_parser.fetch_and_parse(feed_uri)
 
       if response.is_a? Feedzirra::Parser::RSS
         response
@@ -14,6 +14,10 @@ module RSS
 
     def feed_uri
       raise "Implement in Subclass!"
+    end
+
+    def feed_parser
+      Feedzirra::Feed
     end
   end
 end

@@ -2,12 +2,13 @@ module RSS
   class Feed
     class Eztv < RSS::Feed
       class Downloader < RSS::Downloader
-        def initializer
-          Feedzirra::Feed.add_common_feed_entry_elements(:torrent)
-        end
-
         def feed_uri
           "http://www.ezrss.it/feed/"
+        end
+
+        def feed_parser
+          Feedzirra::Feed.add_common_feed_entry_elements(:torrent)
+          Feedzirra::Feed
         end
       end
 
